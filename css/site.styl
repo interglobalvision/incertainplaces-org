@@ -1,0 +1,434 @@
+@import "kouto-swiss"
+
+@import "resets"
+@import "perfectscroll"
+@import "fonts"
+
+// VARIABLES
+
+$teal = rgb(0,200,180)
+
+$full-width = 1487px
+
+$margin-basic = 30px
+$margin-small = 10px
+
+$width-thin-col = 160px
+$width-wide-col = 600px
+
+$font-size-basic = 12px
+$font-leading-basic = 1.3em
+$font-tracking-basic = 0.03em
+
+$font-leading-menu = 1.33em
+
+// HELPERS
+
+.u-width-100
+  display: block
+  width: 100%
+
+// TYPOGRAPHY
+
+body
+  font-family:'regular', helvetica,arial,sans-serif
+  font-size: $font-size-basic
+  line-height: $font-leading-basic
+  letter-spacing: $font-tracking-basic
+
+.font-menu
+  line-height: $font-leading-menu
+
+.font-bold, b, strong
+  font-family:'bold'
+
+.font-italic, i, emphasis
+  font-family: 'italic'
+
+h1,h2,h3,h4,h5,h6
+  font-weight: normal
+
+h1
+  font-size: 3em
+  font-weight: bold
+
+h4
+  margin-bottom: 1em
+
+h5
+  margin-bottom: 1em
+  text-indent: $margin-basic
+
+p
+  margin-bottom: 1em
+  margin-top: 0
+  a
+    color: $teal !important
+    text-decoration: underline
+
+.invert-indent
+  padding-left: 1.5em
+  &:first-letter
+    margin-left: -1.5em
+
+article
+  position: relative
+  a
+    color: $teal !important
+    text-decoration: underline
+
+.font-uppercase
+  text-transform: uppercase
+
+.font-dark
+  color: black
+
+.font-light
+  color: white
+
+// LINKS
+
+a,a:active,a:visited
+  text-decoration: none !important
+  color:inherit
+  transition:color .2s
+
+a:hover
+  color: $teal
+  cursor: pointer
+
+a.active-ajax
+  color: $teal
+
+p
+  a
+    color: $teal
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, $teal 50%)
+    background-repeat: repeat-x
+    background-size: 2px 2px
+    background-position: 0 11px
+
+.indent-link
+  display: inline
+  margin-left: 1em
+  margin-bottom: $margin-small
+  color: $teal !important
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, $teal 50%)
+  background-repeat: repeat-x
+  background-size: 2px 2px
+  background-position: 0 12px
+
+// BASIC
+
+body
+  min-width: $full-width
+  overflow-x: hidden
+  &.no-min-width
+    min-width: 0
+
+#main-container
+  padding: $margin-basic
+  padding-bottom: 0
+  box-sizing: border-box
+
+.col
+  position: relative
+  padding-right: $margin-small
+  padding-left: $margin-small
+  border-left: solid black 3px
+
+.col-inner
+  height: 100%
+  padding-right: ($margin-basic/2)
+  overflow-y: hidden
+  overflow-x: hidden
+
+.col.no-border
+  border: none
+
+.thin-col
+  width: $width-thin-col
+  float: left
+
+.wide-col
+  width: $width-wide-col
+  float: left
+
+.col-number
+  position: absolute
+  transform: rotate(-90deg)
+  left: -15px
+
+img
+  max-width: 100%
+  height: auto
+
+.size-full
+  display: block
+  margin: 0 auto
+
+.border
+  border: solid 1px black
+
+.indent
+  margin-left: $margin-small
+  margin-bottom: $margin-basic
+
+ul
+  margin-bottom: 1em
+
+.wp-caption
+  width: 100% !important
+
+#pagination
+  padding-top: $margin-small
+  padding-bottom: $margin-small
+
+// TOOLTIP
+
+#tooltip
+  display: none
+  z-index: 999
+  position: fixed
+  top: 0
+  left: 0
+
+// HEADER
+
+#header
+  width: $width-thin-col
+//   margin-right: $margin-basic
+
+#logo
+  path
+    transition: fill 0.5s
+
+#menu
+  margin-top: .75em
+
+.menu-item.active
+  color: $teal
+
+// DRAWERS
+
+.submenu
+  display: none
+
+#submenu-level-1
+  display: block
+
+.post-type-archive-students #submenu-students
+  display: block
+
+// GALLERY
+
+.slide
+  padding-top: 1em
+  width: ($width-wide-col - ($margin-basic/2))
+  height: ((($width-wide-col - ($margin-basic/2)) / 3) * 2)
+  overflow: hidden
+  &:hover
+    cursor: pointer
+
+.cycle-pager
+  font-size: 0.8em
+  margin-top: $margin-small
+  margin-bottom: $margin-small
+
+.gallery-pager
+  margin-right: .3em
+  text-decoration: none !important
+  color: black !important
+
+.cycle-pager-active
+  color: $teal !important
+
+.cycle-caption
+  height: 5em
+
+.cycle-caption, .wp-caption-text
+  font-size: 0.8em
+  margin-bottom: $margin-small
+  width: 60%
+  font-family: 'italic'
+
+// HOME
+
+.active-slide-light
+  #logo
+    path
+      fill: white
+
+#home-click
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: 9999
+
+#home-slides
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: -9999
+
+.home-slide
+  width: 100%
+  height: 100%
+  position: absolute
+  top: 0
+  left: 0
+  opacity: 0
+  background-position: center center
+  background-size: cover
+  transition: opacity 0.9s
+  &:first-child
+    opacity: 1
+
+.home-slide-text
+  text-align: center
+  padding-top: $margin-basic
+  font-weight: bold
+  font-size: 1.2em
+
+.home #menu
+  display: none
+
+.home-drawer
+  display: none
+
+.home-news
+  margin-bottom: $margin-small
+  position: relative
+
+.home-post-thumb
+  margin-bottom: 1em
+
+// ABOUT
+
+#about-logos
+  margin-top: 1em
+  img.size-full
+    display: inline
+    margin: 0
+
+// LISTS
+
+.year
+  margin-top: 1em
+  &:first-child
+    margin-top: 0
+
+// FORM
+
+input
+  border: none
+  width: 45%
+  border-bottom: solid black 1px
+  padding-left: 3px
+  &:focus
+    outline: none
+
+#mc-embedded-subscribe-thanks
+  display: none
+
+// SHOP
+
+.shop
+  margin-bottom: $margin-basic
+
+.shop-form
+  display: inline-block
+  margin: 0 $margin-basic
+
+.buy-button
+  border: none
+  width: 45%;
+  border: solid #000 1px
+  padding: 3px 15px
+  background-color: transparent
+  width: auto
+  &:hover
+    background-color: black
+    color: white
+
+// MEDIA QUERIES
+@media screen and (max-width: 1050px)
+
+  $full-width = 1257px
+
+  $margin-basic = 20px
+  $margin-small = 8px
+
+  $width-thin-col = 130px
+  $width-wide-col = 450px
+
+  $font-size-basic = 11px
+
+  body
+    font-size: $font-size-basic
+
+  h5
+    text-indent: $margin-basic
+
+  // BASIC
+
+  body
+    min-width: $full-width
+    &.no-min-width
+      min-width: 0
+
+  #main-container
+    padding: $margin-small
+    padding-bottom: 0
+
+  .col
+    padding-left: $margin-small
+    padding-right: $margin-small
+
+  .thin-col
+    width: $width-thin-col
+    margin-right: $margin-small
+
+  .wide-col
+    width: $width-wide-col
+    margin-right: $margin-small
+
+  .indent
+    margin-left: $margin-small
+    margin-bottom: $margin-basic
+
+  // HEADER
+
+  #header
+    width: $width-thin-col
+    margin-right: $margin-basic
+
+  // DRAWERS
+
+  .hover-image
+    margin-left: $margin-small
+
+  // GALLERY
+
+  .slide
+    width: ($width-wide-col - ($margin-basic/2))
+    height: ((($width-wide-col - ($margin-basic/2)) / 3) * 2)
+
+  .cycle-pager
+    margin-top: $margin-small
+    margin-bottom: $margin-small
+
+  .cycle-caption, .wp-caption-text
+    margin-bottom: $margin-small
+
+  // HOME
+
+  .home-slide-text
+    padding-top: $margin-basic
+
+  .home-news
+    margin-bottom: $margin-small
