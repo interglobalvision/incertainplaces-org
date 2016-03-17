@@ -1,6 +1,7 @@
 var afterAjaxLoad, ajaxContent, detectBrightness, fullWidth, getImageBrightness, init, l, layout, marginBasic, openLevel1, removeHomeSlides, submenus, windowHeight, windowWidth;
 
 fullWidth = 1487;
+mobileWidth = 600;
 
 l = function(data) {
   return console.log(data);
@@ -17,9 +18,9 @@ submenus = $('.submenu');
 ajaxContent = $('#ajax-content');
 
 init = function() {
-  return $(window).on({
+  $(window).on({
     'resize': function() {
-      return layout();
+      layout();
     },
   });
 };
@@ -27,7 +28,7 @@ init = function() {
 $(document).on({
   'load': function() {
     init();
-    return layout();
+    layout();
   },
 });
 
@@ -279,9 +280,15 @@ layout = function() {
   windowWidth = $(window).innerWidth();
   windowHeight = $(window).innerHeight();
 
-  return $('.col').css({
-    'height': (windowHeight - marginBasic) + 'px',
-  });
+  if (windowWidth > mobileWidth) {
+    return $('.col').css({
+      'height': (windowHeight - marginBasic) + 'px',
+    });
+  } else {
+    return $('.col').css({
+      'height': 'auto',
+    });
+  }
 };
 
 afterAjaxLoad = function(title, href) {
