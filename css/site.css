@@ -1372,6 +1372,9 @@ input:focus {
   .col-inner {
     padding-right: 0;
   }
+  .col-number {
+    display: none;
+  }
   iframe {
     width: 100%;
   }
