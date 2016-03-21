@@ -446,6 +446,11 @@ input
   h5
     text-indent: $margin-basic
 
+  .invert-indent
+    padding-left: .5em
+    &:first-letter
+      margin-left: -.5em
+
   // BASIC
 
   body
@@ -477,6 +482,9 @@ input
 
   .col-inner
     padding-right: 0
+
+  .col-number
+    display: none
 
   iframe
     width: 100%

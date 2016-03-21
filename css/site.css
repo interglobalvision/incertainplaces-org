@@ -1335,6 +1335,12 @@ input:focus {
   h5 {
     text-indent: 20px;
   }
+  .invert-indent {
+    padding-left: 0.5em;
+  }
+  .invert-indent:first-letter {
+    margin-left: -0.5em;
+  }
   body {
     min-width: 0;
   }
@@ -1365,6 +1371,9 @@ input:focus {
   }
   .col-inner {
     padding-right: 0;
+  }
+  .col-number {
+    display: none;
   }
   iframe {
     width: 100%;
