@@ -1389,7 +1389,12 @@ input:focus {
     margin-bottom: 10px;
   }
   .home-slide-text {
-    padding-top: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    text-align: left;
+    box-sizing: border-box;
   }
   .home-news {
     margin-bottom: 10px;
