@@ -220,6 +220,7 @@ $(document).ready(function($) {
     ajaxContent.html('loading...').load(e.target.href + ' article.js-content', function() {
       return afterAjaxLoad(e.target.textContent, e.target.href);
     }).show();
+    scrollToBottom();
     ajaxLinks.removeClass('active-ajax');
     return $(this).addClass('active-ajax');
   });
@@ -231,6 +232,7 @@ $(document).ready(function($) {
       ajaxContent.html('loading...').load(e.target.href + ' article.js-content', function() {
         return afterAjaxLoad(e.target.textContent, e.target.href);
       }).show();
+      scrollToBottom();
       ajaxProjectLinks.removeClass('active-ajax');
       return $(this).addClass('active-ajax');
     }
@@ -243,6 +245,7 @@ $(document).ready(function($) {
       ajaxContent.html('loading...').load(e.target.href + ' article.artists', function() {
         return afterAjaxLoad(e.target.textContent, e.target.href);
       }).show();
+      scrollToBottom();
       ajaxArtistLinks.removeClass('active-ajax');
       return $(this).addClass('active-ajax');
     }
@@ -255,6 +258,7 @@ $(document).ready(function($) {
       ajaxContent.html('loading...').load(e.target.href + ' article.students', function() {
         return afterAjaxLoad(e.target.textContent, e.target.href);
       }).show();
+      scrollToBottom();
       ajaxStudentLinks.removeClass('active-ajax');
       return $(this).addClass('active-ajax');
     }
@@ -316,7 +320,6 @@ afterAjaxLoad = function(title, href) {
     $('html, body').animate({
       scrollTop: $('#main-content').offset().top - 13,
     }, 'fast');
-
   }
 
   return init();
@@ -390,4 +393,13 @@ getImageBrightness = function(imageSrc, callback) {
     brightness = Math.floor(colorSum / (this.width * this.height));
     return callback(brightness);
   };
+};
+
+scrollToBottom = function() {
+  // On mobile scroll to loading
+  if( $(window).width() <= mobileWidth ) {
+    $('html, body').animate({
+      scrollTop: $('#main-content').offset().top - 13,
+    }, 'fast');
+  }
 };
