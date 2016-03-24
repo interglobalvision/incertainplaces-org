@@ -1349,9 +1349,13 @@ input:focus {
     padding: 10px;
     padding-bottom: 0;
   }
+  #main-content {
+    min-height: 100vh;
+  }
   .col {
     width: 100%;
     padding-left: 0;
+    padding-right: 0;
     margin-right: 0;
     border-left: none;
   }
