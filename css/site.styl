@@ -230,6 +230,9 @@ ul
   &:hover
     cursor: pointer
 
+  img
+    height: ((($width-wide-col - ($margin-basic/2)) / 3) * 2)
+
 .cycle-pager
   font-size: 0.8em
   margin-top: $margin-small
@@ -416,7 +419,7 @@ input
 
   .slide
     width: ($width-wide-col - ($margin-basic/2))
-    height: ((($width-wide-col - ($margin-basic/2)) / 3) * 2)
+    height: auto
 
   .cycle-pager
     margin-top: $margin-small
@@ -504,7 +507,6 @@ input
 
   .slide
     width: 100%
-    max-height: 66vh
 
   .cycle-pager
     margin-top: $margin-small

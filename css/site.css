@@ -1144,6 +1144,9 @@ ul {
 .slide:hover {
   cursor: pointer;
 }
+.slide img {
+  height: 390px;
+}
 .cycle-pager {
   font-size: 0.8em;
   margin-top: 10px;
@@ -1311,7 +1314,7 @@ input:focus {
   }
   .slide {
     width: 440px;
-    height: 293.3333333333333px;
+    height: auto;
   }
   .cycle-pager {
     margin-top: 8px;
@@ -1387,7 +1390,6 @@ input:focus {
   }
   .slide {
     width: 100%;
-    max-height: 66vh;
   }
   .cycle-pager {
     margin-top: 10px;
