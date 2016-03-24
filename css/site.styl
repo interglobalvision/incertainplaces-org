@@ -225,13 +225,9 @@ ul
 .slide
   padding-top: 1em
   width: ($width-wide-col - ($margin-basic/2))
-  height: ((($width-wide-col - ($margin-basic/2)) / 3) * 2)
   overflow: hidden
   &:hover
     cursor: pointer
-
-  img
-    height: ((($width-wide-col - ($margin-basic/2)) / 3) * 2)
 
 .cycle-pager
   font-size: 0.8em
@@ -247,8 +243,8 @@ ul
   color: $teal !important
 
 .cycle-caption
-  height: auto
-  margin-bottom: 2.4em
+  min-height: 5em
+  margin-bottom: 1em
   
 .cycle-caption, .wp-caption-text
   font-size: 0.8em
@@ -419,7 +415,6 @@ input
 
   .slide
     width: ($width-wide-col - ($margin-basic/2))
-    height: auto
 
   .cycle-pager
     margin-top: $margin-small

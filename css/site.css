@@ -1138,14 +1138,10 @@ ul {
 .slide {
   padding-top: 1em;
   width: 585px;
-  height: 390px;
   overflow: hidden;
 }
 .slide:hover {
   cursor: pointer;
-}
-.slide img {
-  height: 390px;
 }
 .cycle-pager {
   font-size: 0.8em;
@@ -1161,8 +1157,8 @@ ul {
   color: #00c8b4 !important;
 }
 .cycle-caption {
-  height: auto;
-  margin-bottom: 2.4em;
+  min-height: 5em;
+  margin-bottom: 1em;
 }
 .cycle-caption,
 .wp-caption-text {
@@ -1314,7 +1310,6 @@ input:focus {
   }
   .slide {
     width: 440px;
-    height: auto;
   }
   .cycle-pager {
     margin-top: 8px;
