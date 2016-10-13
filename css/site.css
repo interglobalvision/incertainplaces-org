@@ -1021,6 +1021,11 @@ a:hover {
 a.active-ajax {
   color: #00c8b4;
 }
+a.level-1-breadcrumb,
+a.level-2-breadcrumb,
+a.level-3-breadcrumb {
+  color: #00c8b4;
+}
 p a {
   color: #00c8b4;
   background-image: -webkit-linear-gradient(top,rgba(0,0,0,0) 50%,#00c8b4 50%);
