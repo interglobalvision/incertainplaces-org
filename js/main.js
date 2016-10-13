@@ -5,7 +5,7 @@ var Site = {
     this.windowWidth = $(window).innerWidth();
     this.windowHeight = $(window).innerHeight();
     this.marginBasic = parseInt($('#main-container').css('padding-top'));
-    this.mobileWidth = 600;
+    this.mobileWidth = 800;
     this.fullWidth = 1487;
 
     this.bind();

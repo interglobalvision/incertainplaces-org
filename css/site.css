@@ -1331,7 +1331,7 @@ input:focus {
     margin-bottom: 8px;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   body {
     font-size: 12px;
   }
@@ -1351,6 +1351,7 @@ input:focus {
     min-width: 0;
   }
   #main-container {
+    max-width: 600px;
     padding: 10px;
     padding-bottom: 0;
   }
