@@ -118,7 +118,7 @@
 	<nav class="thin-col col font-uppercase submenu submenu-level-2" id="submenu-practising-place">
 		<div class="col-inner">
       <ul>
-        <li><a class="js-ajax-projects" href="<?php echo home_url('practicing-place/'); ?>">About</a></li>
+        <li><a class="js-ajax-pp-about" href="<?php echo home_url('practicing-place/'); ?>">About</a></li>
   			<li>
   				<a class="js-open-level-2 u-width-100" data-target="practising-place-event">
   					Events

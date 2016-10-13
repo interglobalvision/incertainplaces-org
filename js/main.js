@@ -289,12 +289,16 @@ Site.Menu = {
     $('.js-open-level-1').click(function(e) {
       var target = $(this).data('target');
 
+      Site.Breadcrumbs.setLevelOne($(this));
+
       _this.openLevel1(target);
       return Site.Layout.logic();
     });
 
     $('.js-open-level-2').click(function(e) {
       var target = $(this).data('target');
+
+      Site.Breadcrumbs.setLevelTwo($(this));
 
       _this.$submenus.hide();
 
@@ -318,6 +322,29 @@ Site.Menu = {
   },
 };
 
+Site.Breadcrumbs = {
+  setLevelOne: function($target) {
+    $('.level-1-breadcrumb').removeClass('level-1-breadcrumb');
+    $target.addClass('level-1-breadcrumb');
+  },
+
+  setLevelTwo: function($target) {
+    $('.level-2-breadcrumb').removeClass('level-2-breadcrumb');
+    $target.addClass('level-2-breadcrumb');
+  },
+
+  setLevelThree: function($target) {
+    $('.level-3-breadcrumb').removeClass('level-3-breadcrumb');
+    $target.addClass('level-3-breadcrumb');
+  },
+
+  clearAll: function() {
+    $('.level-1-breadcrumb').removeClass('level-2-breadcrumb');
+    $('.level-2-breadcrumb').removeClass('level-2-breadcrumb');
+    $('.level-3-breadcrumb').removeClass('level-3-breadcrumb');
+  },
+};
+
 Site.Ajax = {
   init: function() {
 
@@ -325,6 +352,7 @@ Site.Ajax = {
 
     this.$ajaxLinks = $('.js-ajax');
     this.$ajaxProjectLinks = $('.js-ajax-projects');
+    this.$ajaxPracticingPlaceAbout = $('.js-ajax-pp-about');
     this.$ajaxArtistLinks = $('.js-ajax-artists');
     this.$ajaxStudentLinks = $('.js-ajax-students');
     this.$ajaxMaLinks = $('.js-open-ma-information');
@@ -341,24 +369,37 @@ Site.Ajax = {
 
     _this.$ajaxProjectLinks.on('click.ajax', function(e) {
       if ($('.single-projects').length || $('.post-type-archive-projects').length) {
+        Site.Breadcrumbs.setLevelThree($(this));
+        _this.ajaxLoad(e);
+      }
+    });
+
+    _this.$ajaxPracticingPlaceAbout.on('click.ajax', function(e) {
+      if ($('.single-projects').length || $('.post-type-archive-projects').length) {
+        Site.Breadcrumbs.setLevelTwo($(this));
+        $('.submenu-level-3').hide();
         _this.ajaxLoad(e);
       }
     });
 
     _this.$ajaxArtistLinks.on('click.ajax', function(e) {
       if ($('.single-artists').length || $('.post-type-archive-artists').length) {
+        Site.Breadcrumbs.setLevelOne($(this));
         _this.ajaxLoad(e);
       }
     });
 
     _this.$ajaxStudentLinks.on('click.ajax', function(e) {
       if ($('.single-students').length || $('.post-type-archive-students').length || $('.page').length) {
+        Site.Breadcrumbs.setLevelTwo($(this));
         _this.ajaxLoad(e);
       }
     });
 
     _this.$ajaxMaLinks.on('click.ajax', function(e) {
       e.preventDefault();
+
+      Site.Breadcrumbs.setLevelOne($(this));
 
       Site.Menu.$submenus.hide();
 
@@ -410,12 +451,7 @@ Site.Ajax = {
       return $('#ajax-content').perfectScrollbar('destroy').perfectScrollbar({
         'suppressScrollX': true,
       });
-    }).animate({
-      scrollTop: 0,
-    }, 'fast');
-
-    // scroll to content
-    _this.scrollToBottom();
+    });
 
     // unbind ajax links
     _this.unbind();
