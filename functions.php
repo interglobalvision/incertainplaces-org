@@ -35,7 +35,7 @@ if ( function_exists( 'add_image_size' ) ) {
 get_template_part( 'lib/gallery' );
 get_template_part( 'lib/post-types' );
 get_template_part( 'lib/meta-boxes' );
-add_action( 'init', 'cmb_initialize_cmb_meta_boxes', 9999 );
+add_action( 'init', 'cmb_initialize_cmb_meta_boxes', 11 );
 function cmb_initialize_cmb_meta_boxes() {
 
 	if ( ! class_exists( 'cmb_Meta_Box' ) )
